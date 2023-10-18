@@ -7,6 +7,28 @@ console.log(" 1. +10 \n 2. +16 \n 3. +54 \n 4. +20 \nИтого: 100 балов"
 // })
 
 
+//Profile
+
+const profile = document.querySelector('.header__svg');
+const modalRegister = document.getElementById('register');
+const modalLogIn = document.getElementById('logIn');
+
+
+profile.addEventListener("click", function(item) {
+  modalRegister.classList.toggle('hidden')
+  item._isClick = true;
+})
+
+modalRegister.addEventListener('click', function(item) {
+  item._isClick = true;
+})
+
+document.body.addEventListener('click', function(item) {
+  if(item._isClick === true) return
+  modalRegister.classList.add('hidden')
+})
+
+
 // burger
 
 const burger = document.getElementById("burger");
@@ -15,7 +37,6 @@ const burgerItem = document.querySelectorAll(".header__item")
 
 burger.addEventListener("click", function(element) {
   element._isClick = true
-  console.log('бургер')
   document.querySelector(".header").classList.toggle("open")
 })
 
@@ -31,9 +52,12 @@ nav.addEventListener("click", function(element) {
 
 document.body.addEventListener("click", function(element) {
   if(element._isClick == true) return
-  console.log("область")
   document.querySelector(".header").classList.remove("open")
 })
+
+
+
+
 
 
 // slider

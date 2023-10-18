@@ -202,6 +202,62 @@ body {
   margin: 0;
 }
 
+.header__account {
+  position: relative;
+}
+
+.profile {
+  position: absolute;
+  right: 0;
+  top: 28px;
+  width: 80px;
+  height: 115px;
+  color: var(--color-descr);
+  background-color: var(--color-inversion);
+}
+
+.profile__title {
+  position: relative;
+  margin: 0;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+}
+
+.profile__title::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  display: block;
+  width: 40px;
+  height: 1px;
+  text-align: center;
+  margin-top: 5px;
+  background-color: var(--color-filling);
+}
+
+.profile__list {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.profile__item {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.profile__item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
 .header__svg {
   cursor: pointer;
   z-index: 3;
