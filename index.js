@@ -9,13 +9,14 @@ console.log(" 1. +10 \n 2. +16 \n 3. +54 \n 4. +20 \nИтого: 100 балов"
 
 //Profile
 
+const account = document.querySelector('.header__account')
 const profile = document.querySelector('.header__svg');
 const modalRegister = document.getElementById('register');
 const modalLogIn = document.getElementById('logIn');
 
 
 profile.addEventListener("click", function(item) {
-  modalRegister.classList.toggle('hidden')
+  account.classList.toggle('open')
   item._isClick = true;
 })
 
@@ -25,8 +26,10 @@ modalRegister.addEventListener('click', function(item) {
 
 document.body.addEventListener('click', function(item) {
   if(item._isClick === true) return
-  modalRegister.classList.add('hidden')
+  account.classList.remove('open')
 })
+
+
 
 
 // burger
@@ -38,11 +41,18 @@ const burgerItem = document.querySelectorAll(".header__item")
 burger.addEventListener("click", function(element) {
   element._isClick = true
   document.querySelector(".header").classList.toggle("open")
+  account.classList.remove('open')
 })
 
 burgerItem.forEach(function(item) {
   item.addEventListener("click", function() {
   document.querySelector(".header").classList.remove("open")
+  })
+})
+
+burgerItem.forEach(function(item) {
+  item.addEventListener('click', function() {
+    account.classList.remove('open')
   })
 })
 

@@ -212,8 +212,34 @@ body {
   top: 28px;
   width: 80px;
   height: 115px;
+  opacity: 0;
+  transform: translateY(-180px);
   color: var(--color-descr);
   background-color: var(--color-inversion);
+  transition: transform .2s ease-in-out,
+    opacity .2s ease-in-out;
+}
+
+.profile__link {
+  position: relative;
+  transition: color .2s ease-in-out;
+}
+
+.profile__link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -7px;
+  height: 1px;
+  background-color: var(--color-filling);
+  transform: scale(0);
+  transition: transform .2s ease-in-out;
+}
+
+.header__account.open .profile {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .profile__title {
@@ -1113,6 +1139,14 @@ button:disabled {
 
   .header__link:hover {
     color: var(--color-filling);
+  }
+
+  .profile__link:hover {
+    color: var(--color-filling);
+  }
+
+  .profile__link:hover::before {
+    transform: scale(1);
   }
 
   .footer__address:hover {
