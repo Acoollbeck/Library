@@ -776,10 +776,6 @@ button:disabled {
   color: var(--color-descr);
 }
 
-.contacts__right img {
-  width: 100%;
-}
-
 /* cards */
 
 .cards {
