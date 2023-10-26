@@ -49,11 +49,11 @@ body {
   font-weight: 400;
 }
 
-.hidden {
+/* .hidden {
   display: none !important;
   opacity: 0;
   transition: opacity .3s ease-in-out, display .3s ease-in-out;
-}
+} */
 
 .body__wraper {
   overflow: hidden;
@@ -425,6 +425,44 @@ body {
 
 /* favorites */
 
+.favorites__block {
+  position: relative;
+  width: 1440px;
+  height: 1440px;
+}
+
+.winter {
+  position: absolute;
+  opacity: 1;
+}
+
+.spring {
+  position: absolute;
+  opacity: 0;
+}
+
+.summer {
+  position: absolute;
+  opacity: 0;
+}
+
+.autumn {
+  position: absolute;
+  opacity: 0;
+}
+
+.visibility {
+  opacity: 1;
+  z-index: 2;
+  transition: opacity .9s ease-in-out, z-index 3s ease-in-out;
+}
+
+.notVsblt {
+  opacity: 0;
+  z-index: 0;
+  transition: opacity .1s ease-in-out, z-index 3s ease-in-out;
+}
+
 .favorites {
   margin-bottom: 60px;
 }
@@ -492,6 +530,8 @@ body {
   gap: 40px 20px;
   margin: 0;
   padding: 0;
+  max-width: 1440px;
+  width: 100%;
 }
 
 .favorites__card {

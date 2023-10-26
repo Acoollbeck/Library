@@ -184,30 +184,50 @@ const summerBlock = document.querySelector('.summer');
 const autumnBlock = document.querySelector('.autumn');
 
 winter.addEventListener('click', function() {
-  winterBlock.classList.remove('hidden');
-  springBlock.classList.add('hidden');
-  summerBlock.classList.add('hidden');
-  autumnBlock.classList.add('hidden');
+  winterBlock.classList.add('visibility');
+  winterBlock.classList.remove('notVsblt');
+  springBlock.classList.add('notVsblt');
+  summerBlock.classList.add('notVsblt');
+  autumnBlock.classList.add('notVsblt');
+
+  springBlock.classList.remove('visibility');
+  summerBlock.classList.remove('visibility');
+  autumnBlock.classList.remove('visibility');
 });
 
 spring.addEventListener('click', function() {
-  winterBlock.classList.add('hidden');
-  springBlock.classList.remove('hidden');
-  summerBlock.classList.add('hidden');
-  autumnBlock.classList.add('hidden');
+  winterBlock.classList.add('notVsblt');
+  springBlock.classList.add('visibility');
+  springBlock.classList.remove('notVsblt');
+  summerBlock.classList.add('notVsblt');
+  autumnBlock.classList.add('notVsblt');
+
+  winterBlock.classList.remove('visibility');
+  summerBlock.classList.remove('visibility');
+  autumnBlock.classList.remove('visibility');
 });
 
 
 summer.addEventListener('click', function() {
-  winterBlock.classList.add('hidden');
-  springBlock.classList.add('hidden');
-  summerBlock.classList.remove('hidden');
-  autumnBlock.classList.add('hidden');
+  winterBlock.classList.add('notVsblt');
+  springBlock.classList.add('notVsblt');
+  summerBlock.classList.add('visibility');
+  summerBlock.classList.remove('notVsblt');
+  autumnBlock.classList.add('notVsblt');
+
+  winterBlock.classList.remove('visibility');
+  springBlock.classList.remove('visibility');
+  autumnBlock.classList.remove('visibility');
 });
 
 autumn.addEventListener('click', function() {
-  winterBlock.classList.add('hidden');
-  springBlock.classList.add('hidden');
-  summerBlock.classList.add('hidden');
-  autumnBlock.classList.remove('hidden');
+  winterBlock.classList.add('notVsblt');
+  springBlock.classList.add('notVsblt');
+  summerBlock.classList.add('notVsblt');
+  autumnBlock.classList.add('visibility');
+  autumnBlock.classList.remove('notVsblt');
+
+  winterBlock.classList.remove('visibility');
+  springBlock.classList.remove('visibility');
+  summerBlock.classList.remove('visibility');
 });
