@@ -231,3 +231,33 @@ autumn.addEventListener('click', function() {
   springBlock.classList.remove('visibility');
   summerBlock.classList.remove('visibility');
 });
+
+
+// Modal
+
+const register = document.querySelector('.link__logIn')
+const modal = document.querySelector('.modal')
+const modalSvg = document.querySelector('.modal__svg')
+const body = document.querySelector('.body')
+const modalLog = document.querySelector('.modal__log')
+
+register.addEventListener('click', function() {
+  modal.classList.add('open')
+  account.classList.remove('open')
+})
+
+modalSvg.addEventListener('click', function(){
+  modal.classList.remove('open')
+})
+
+modalLog.addEventListener('click', function(event) {
+  event._isClickModal = true
+})
+
+modal.addEventListener('click', function(event){
+  if (event._isClickModal === true) {
+    return
+  } else {
+    modal.classList.remove('open')
+  }
+})
