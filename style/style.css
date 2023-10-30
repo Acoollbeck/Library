@@ -100,7 +100,7 @@ body {
 
 .modal {
   position: fixed;
-  display: grid;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -116,11 +116,22 @@ body {
 }
 
 .modal__log {
-  position: relative;
-  left: 0;
-  top: 0;
+  position: absolute;
   width: 250px;
   height: 262px;
+  padding: 20px 25px;
+  z-index: 1;
+  color: var(--color-descr);
+  background-color: var(--color-inversion);
+  box-shadow: 4px 4px 17px 9px rgba(73, 111, 141, 0.2);
+  transform: scale(0);
+  transition: transform .3s ease-in-out;
+}
+
+.modal__register {
+  position: absolute;
+  width: 250px;
+  height: 382px;
   padding: 20px 25px;
   z-index: 1;
   color: var(--color-descr);
@@ -190,6 +201,15 @@ body {
 }
 
 .modal.open .modal__log {
+  transform: scale(1);
+}
+
+.open--register {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal.open--register .modal__register {
   transform: scale(1);
 }
 

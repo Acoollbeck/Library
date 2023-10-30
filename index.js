@@ -240,6 +240,11 @@ const modal = document.querySelector('.modal')
 const modalSvg = document.querySelector('.modal__svg')
 const body = document.querySelector('.body')
 const modalLog = document.querySelector('.modal__log')
+const registerLink = document.querySelector('.link__register')
+const closeRegister = document.querySelector('.modal__close--register')
+const modalWindowRegister = document.querySelector('.modal__register')
+const modalLinkLogin = document.querySelector('.modal__link--login')
+const modalLinkRegister = document.querySelector('.modal__link--register')
 
 register.addEventListener('click', function() {
   modal.classList.add('open')
@@ -248,9 +253,14 @@ register.addEventListener('click', function() {
 
 modalSvg.addEventListener('click', function(){
   modal.classList.remove('open')
+  modal.classList.remove('open--register')
 })
 
 modalLog.addEventListener('click', function(event) {
+  event._isClickModal = true
+})
+
+modalWindowRegister.addEventListener('click', function(event){
   event._isClickModal = true
 })
 
@@ -259,5 +269,27 @@ modal.addEventListener('click', function(event){
     return
   } else {
     modal.classList.remove('open')
+    modal.classList.remove('open--register')
   }
 })
+
+
+registerLink.addEventListener('click', function () {
+  modal.classList.add('open--register')
+  account.classList.remove('open')
+})
+
+closeRegister.addEventListener('click', function() {
+  modal.classList.remove('open--register')
+})
+
+modalLinkLogin.addEventListener('click', function(){
+  modal.classList.remove('open--register')
+  modal.classList.add('open')
+})
+
+modalLinkRegister.addEventListener('click', function(){
+  modal.classList.add('open--register')
+  modal.classList.remove('open')
+})
+
